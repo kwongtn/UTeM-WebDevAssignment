@@ -23,6 +23,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { AboutTeamComponent } from './about/team/about-team.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { TechStackComponent } from './about/tech-stack/tech-stack.component';
 import { AboutComponent } from './about/about.component';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { AboutComponent } from './about/about.component';
     AboutTeamComponent,
     RegistrationComponent,
     LoginComponent,
+    TechStackComponent,
     AboutComponent,
   ],
   imports: [

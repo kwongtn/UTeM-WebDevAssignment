@@ -1,0 +1,15 @@
+.card {
+  min-width: 120px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 20px auto;
+}
+
+.tech-stack-img {
+  width: 80%;
+  max-width: 700px;
+  padding-left: auto;
+  padding-right: auto;
+  border: 0.5px solid rgb(0, 0, 0);
+}

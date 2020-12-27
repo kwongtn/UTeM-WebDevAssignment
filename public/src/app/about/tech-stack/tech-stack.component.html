@@ -1,0 +1,45 @@
+<mat-card class="card">
+    <mat-card-content>
+        <h1>The tech stack</h1>
+        <p>The tech stack is broken down into a few parts, as shown at the image below.</p>
+        <img src="assets/TechStack-01.svg" class="tech-stack-img">
+        <h2>Infrastructure</h2>
+        <p>
+            The server is hosted on a DigitalOcean server (Droplet) running Ubuntu 20.04, whereas the code is hosted on
+            GitHub.
+        </p>
+        <p>
+            We separate our development into a few parts, to enable productive development.
+        </p>
+        <h2>
+            Deployment Lifecycle
+        </h2>
+        <h3>Frontend</h3>
+        <ol>
+            <li>The developer first commits and pushes the code to GitHub.</li>
+            <li>A cron job, running on the DigitalOcean Droplet will pull the latest changes, compile codes and copies
+                them to the Apache server directory.</li>
+            <li>The new page is served for new web page requests.</li>
+        </ol>
+        <h3>Backend</h3>
+        <ol>
+            <li>The developer first commits and pushes the code to GitHub.</li>
+            <li>A cron job, running on the DigitalOcean Droplet will pull the latest changes and copies
+                them to the php directory.</li>
+        </ol>
+        <h3>Database</h3>
+        <p>All changes are done directly on the database.</p>
+        <h2>
+            Usage Lifecycle
+        </h2>
+        <ol>
+            <li>The user will first encounter the compiled front end page written in Angular.</li>
+            <li>For external API requests, it will directly redirect to the relavant server; for internal API requests,
+                it will send to the internal PHP server for processing.</li>
+            <li>If required, the PHP server will connect with the MySQL server to get data. Else it directly responds.
+            </li>
+            <li>Angular intercepts the data and presents it at the relavant location.</li>
+        </ol>
+
+    </mat-card-content>
+</mat-card>
