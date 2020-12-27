@@ -1,0 +1,115 @@
+[
+    {
+        "description": "Form submission of the login page.",
+        "type": "POST",
+        "preferredURL": "/login",
+        "requestFormat": "JSON",
+        "format": [
+            {
+                "fieldName": "email",
+                "type": "string",
+                "description": "Email to login."
+            },
+            {
+                "fieldName": "password",
+                "type": "string",
+                "description": "Hashed password."
+            }
+        ],
+        "responseFormat": [
+            {
+                "fieldName": "loginStatus",
+                "type": "boolean",
+                "description": "Status of login. True being successful login, false being failed login."
+            },
+            {
+                "fieldName": "sessionID",
+                "type": "string",
+                "description": "SessionID that will be used as verification later on."
+            }
+        ]
+    },
+    {
+        "description": "Logout action.",
+        "type": "POST",
+        "preferredURL": "/logout",
+        "requestFormat": "JSON",
+        "format": [
+            {
+                "fieldName": "sessionID",
+                "type": "string",
+                "description": "SessionID that will be used to logout."
+            }
+        ],
+        "responseFormat": [
+            {
+                "fieldName": "logoutStatus",
+                "type": "boolean",
+                "description": "Status of logout. True being successful logout, false being failed logout."
+            }
+        ]
+    },
+    {
+        "description": "Form submission of the registration form.",
+        "type": "POST",
+        "preferredURL": "/registration",
+        "requestFormat": "JSON",
+        "format": [
+            {
+                "fieldName": "name",
+                "type": "string",
+                "description": "Name of user."
+            },
+            {
+                "fieldName": "email",
+                "type": "string",
+                "description": "Email of the user, that will be used as login ID."
+            },
+            {
+                "fieldName": "city",
+                "type": "string",
+                "description": "City of the user"
+            },
+            {
+                "fieldName": "postalCode",
+                "type": "number",
+                "description": "Postal code of the user."
+            },
+            {
+                "fieldName": "country",
+                "type": "string",
+                "description": "Country code of the country of the user."
+            },
+            {
+                "fieldName": "additionalNotes",
+                "type": "string",
+                "description": "Any additional notes the user wants to add."
+            }
+        ]
+    },
+    {
+        "description": "Get details of user with a session ID.",
+        "type": "GET",
+        "preferredURL": "/verify",
+        "requestFormat": "URL Encoded",
+        "format": [
+            {
+                "fieldName": "sessionID",
+                "type": "string",
+                "description": "Session ID to be verified against."
+            }
+        ],
+        "responseFormat": [
+            {
+                "fieldName": "loginStatus",
+                "type": "boolean",
+                "description": "Status of login. True being successful login, false being failed login."
+            },
+            {
+                "fieldName": "details",
+                "type": "JSON",
+                "description": "JSON response containing the name, email, city, postalCode, country & additional notes of the user."
+            }
+        ]
+    }
+]
