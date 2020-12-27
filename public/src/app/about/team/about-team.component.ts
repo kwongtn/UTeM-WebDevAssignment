@@ -44,6 +44,16 @@ export class AboutTeamComponent implements OnInit {
         { name: 'GitHub', link: 'https://github.com/Sham0106' },
       ],
     },
+    {
+      name: 'Ainin Sofiya',
+      role: 'Backend API Developer',
+      profilePict: 'assets/AinSofiya.jpg',
+      description: `Hi there! I' am Ainin. You can call me Nia. I am positive thinker. I am currently studied at UTeM Malacca and furthering my studies in Artificial Intelligence courses. Backthen, I am graduated in Higher National Diploma(HND) in Computing (System Development). My major programming language is C#. But I am ready to learn new programming languages. My Moto life is "If we ease others, others will ease us in the future, with God Permission". So lets keep learning, because life never stop teaching.   `,
+      links: [
+        { name: 'LinkedIn', link: 'https://www.linkedin.com/in/AinSofiya' },
+        { name: 'GitHub', link: 'https://github.com/AinSofiya' },
+      ],
+    },
   ];
 
   constructor() {}
