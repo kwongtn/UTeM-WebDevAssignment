@@ -7,6 +7,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent {
+  formError: boolean = false;
   form = this.fb.group({
     name: [null, Validators.required],
     notes: null,
@@ -272,9 +273,13 @@ export class RegistrationComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit() {
-    alert(
-      'Thank you for registering, an admin will review your application & send you an email if succesful.'
-    );
+    if (this.form.valid) {
+      alert(
+        'Thank you for registering, an admin will review your application & send you an email if succesful.'
+      );
+    } else {
+      this.formError = true;
+    }
   }
 
   clearEntries() {
