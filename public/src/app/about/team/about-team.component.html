@@ -11,10 +11,8 @@
                         <td>
                             <img [src]="profile.profilePict" class="profile-image" *ngIf="profile.profilePict" />
                         </td>
-                        <td style="padding-left:20px;">
-                            <article>
-                                {{profile.description}}
-                            </article>
+                        <td style="padding-left:20px;white-space: pre-wrap;">
+                            {{profile.description}}
                         </td>
                     </tr>
                 </table>
