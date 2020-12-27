@@ -1,3 +1,8 @@
 .button-separator {
   width: 10px;
 }
+
+.github-link {
+  position: absolute;
+  right: 0px;
+}
