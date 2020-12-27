@@ -18,7 +18,7 @@
                 </table>
             </mat-card-content>
             <mat-card-actions *ngIf="profile.links">
-                <a [href]="link.link" *ngFor='let link of profile.links' style="padding-left:10px;">
+                <a [href]="link.link" *ngFor='let link of profile.links' style="padding-left:10px;" target="_blank">
                     <button mat-raised-button color="primary">{{link.name}}</button>
                 </a>
                 <span class="button-separator"></span>

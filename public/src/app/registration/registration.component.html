@@ -55,7 +55,9 @@
           <mat-form-field class="full-width">
             <mat-select placeholder="Country" formControlName="country">
               <mat-option *ngFor="let country of countries" [value]="country.abbreviation">
-                {{ country.name }} | {{ country.abbreviation }}
+                <img
+                  [src]="'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/1x1/' + country.abbreviation.toLowerCase() + '.svg'"
+                  style="height: 20px;padding-right:10px;" /> {{ country.name }} | {{ country.abbreviation }}
               </mat-option>
             </mat-select>
             <mat-error *ngIf="form.controls['country'].hasError('required')">
@@ -79,10 +81,13 @@
           </mat-form-field>
         </div>
       </div>
+      <div *ngIf="formError">
+        <mat-error>Please fix the errors as mentioned above before continuing.</mat-error>
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" type="submit">Submit</button>
-      <button mat-raised-button onclick="clearEntries()">Clear</button>
+      <button mat-raised-button type="reset" onclick="clearEntries()">Clear</button>
     </mat-card-actions>
   </mat-card>
 </form>
