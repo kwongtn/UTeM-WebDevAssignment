@@ -20,7 +20,6 @@ export class DailyCasesComponent implements AfterViewInit, OnInit {
   table!: MatTable<WorldOMeter>;
   dataSource: DailyCasesDataSource = new DailyCasesDataSource(
     this.coronatrackerService
-
   );
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */

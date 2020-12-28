@@ -13,7 +13,7 @@ export class TopCasesComponent implements OnInit {
   screenWidth: number = 1920;
   multi: BarChartData = [];
 
-  view: [number, number] = [this.screenWidth * 0.8, this.screenHeight * 0.5];
+  view: [number, number] = [this.screenWidth * 0.8, this.screenHeight * 0.45];
 
   // options
   legend: boolean = true;
@@ -41,7 +41,7 @@ export class TopCasesComponent implements OnInit {
   getScreenSize(event?: any) {
     this.screenHeight = window.innerHeight;
     this.screenWidth = window.innerWidth;
-    this.view = [this.screenWidth * 0.9, this.screenHeight * 0.55];
+    this.view = [this.screenWidth * 0.8, this.screenHeight * 0.45];
   }
 
   onSelect(data: any): void {
