@@ -14,3 +14,9 @@
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
