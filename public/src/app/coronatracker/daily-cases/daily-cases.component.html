@@ -1,0 +1,56 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+
+    <!-- countryName Column -->
+    <ng-container matColumnDef="countryName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Country Name</th>
+      <td mat-cell *matCellDef="let row" style="text-align:'left';"><img
+          [src]="'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/1x1/' + row.countryCode.toLowerCase() + '.svg'"
+          style="height: 20px;padding-right:10px;" /> {{row.countryName}}</td>
+    </ng-container>
+
+    <!-- totalConfirmed Column -->
+    <ng-container matColumnDef="totalConfirmed">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Confirmed</th>
+      <td mat-cell *matCellDef="let row">{{row.totalConfirmed | number: '.'}}</td>
+    </ng-container>
+
+    <!-- totalDeaths Column -->
+    <ng-container matColumnDef="totalDeaths">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Deaths</th>
+      <td mat-cell *matCellDef="let row">{{row.totalDeaths | number: '.'}}</td>
+    </ng-container>
+
+    <!-- totalRecovered Column -->
+    <ng-container matColumnDef="totalRecovered">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Recovered</th>
+      <td mat-cell *matCellDef="let row">{{row.totalRecovered | number: '.'}}</td>
+    </ng-container>
+
+    <!-- dailyConfirmed Column -->
+    <ng-container matColumnDef="dailyConfirmed">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Daily Confirmed</th>
+      <td mat-cell *matCellDef="let row">{{row.dailyConfirmed | number: '.'}}</td>
+    </ng-container>
+
+    <!-- dailyDeaths Column -->
+    <ng-container matColumnDef="dailyDeaths">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Daily Deaths</th>
+      <td mat-cell *matCellDef="let row">{{row.dailyDeaths | number: '.'}}</td>
+    </ng-container>
+
+    <!-- activeCases Column -->
+    <ng-container matColumnDef="activeCases">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Active Cases</th>
+      <td mat-cell *matCellDef="let row">{{row.activeCases | number: '.'}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <span *ngIf="dataSource">
+    <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="7">
+    </mat-paginator>
+  </span>
+</div>

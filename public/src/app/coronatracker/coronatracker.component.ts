@@ -9,11 +9,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 })
 export class CoronatrackerComponent {
   /** Based on the screen size, switch from standard to one column per row */
-  cards = [
-    { title: 'Card 2', cols: 1, rows: 1 },
-    { title: 'Card 3', cols: 1, rows: 2 },
-    { title: 'Card 4', cols: 1, rows: 1 },
-  ];
+  cards = [{ title: 'Card 3', cols: 1, rows: 2 }];
 
   constructor() {}
 }

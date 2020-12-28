@@ -30,6 +30,10 @@ import { TechStackComponent } from './about/tech-stack/tech-stack.component';
 import { AboutComponent } from './about/about.component';
 import { CoronatrackerComponent } from './coronatracker/coronatracker.component';
 import { WorldwideHistoryComponent } from './coronatracker/worldwide-history/worldwide-history.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { DailyCasesComponent } from './coronatracker/daily-cases/daily-cases.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,7 @@ import { WorldwideHistoryComponent } from './coronatracker/worldwide-history/wor
     AboutComponent,
     CoronatrackerComponent,
     WorldwideHistoryComponent,
+    DailyCasesComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +65,9 @@ import { WorldwideHistoryComponent } from './coronatracker/worldwide-history/wor
     MatTabsModule,
     ReactiveFormsModule,
     NgxChartsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
