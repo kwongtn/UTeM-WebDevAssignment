@@ -37,6 +37,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DailyCasesComponent } from './coronatracker/daily-cases/daily-cases.component';
 import { TopCasesComponent } from './coronatracker/top-cases/top-cases.component';
+import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -51,6 +52,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     WorldwideHistoryComponent,
     DailyCasesComponent,
     TopCasesComponent,
+    HomeComponent,
     PageNotFoundComponent,
   ],
   imports: [
