@@ -9,8 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-// Material Design Components
+// Angular CDK Components
 import { LayoutModule } from '@angular/cdk/layout';
+
+// Material Design Components
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -35,6 +37,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DailyCasesComponent } from './coronatracker/daily-cases/daily-cases.component';
 import { TopCasesComponent } from './coronatracker/top-cases/top-cases.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,7 @@ import { TopCasesComponent } from './coronatracker/top-cases/top-cases.component
     WorldwideHistoryComponent,
     DailyCasesComponent,
     TopCasesComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
