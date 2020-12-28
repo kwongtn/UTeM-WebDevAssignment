@@ -78,7 +78,9 @@ export class WorldwideHistoryComponent implements OnInit {
                 index: number,
                 array: Array<TotalTrending>
               ) => {
-                var myDate = new Date(value.lastUpdated).toDateString();
+                var myDate = new Date(value.lastUpdated)
+                  .toDateString()
+                  .slice(4);
 
                 totalConfirmed.series.push({
                   name: myDate,
