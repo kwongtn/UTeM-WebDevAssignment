@@ -26,6 +26,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 // Defined Components
 import { AboutTeamComponent } from './about/team/about-team.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { TechStackComponent } from './about/tech-stack/tech-stack.component';
@@ -44,6 +45,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     AboutTeamComponent,
+    DashboardComponent,
     RegistrationComponent,
     LoginComponent,
     TechStackComponent,
