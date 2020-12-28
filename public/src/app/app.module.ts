@@ -34,6 +34,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DailyCasesComponent } from './coronatracker/daily-cases/daily-cases.component';
+import { TopCasesComponent } from './coronatracker/top-cases/top-cases.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { DailyCasesComponent } from './coronatracker/daily-cases/daily-cases.com
     CoronatrackerComponent,
     WorldwideHistoryComponent,
     DailyCasesComponent,
+    TopCasesComponent,
   ],
   imports: [
     BrowserModule,

@@ -47,12 +47,11 @@
       </mat-card>
     </mat-grid-tile>
 
-
-    <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-tile [colspan]=2 [rowspan]=1>
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            {{card.title}}
+            Top 10 Country Cases
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -63,7 +62,9 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          card.content
+          <div>
+            <app-top-cases></app-top-cases>
+          </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
