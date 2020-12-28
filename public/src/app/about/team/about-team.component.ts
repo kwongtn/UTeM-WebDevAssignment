@@ -54,6 +54,16 @@ export class AboutTeamComponent implements OnInit {
         { name: 'GitHub', link: 'https://github.com/AinSofiya' },
       ],
     },
+    {
+      name: 'Lim Zi Feng',
+      role: ' ',
+      profilePict: 'assets/Picture.jpg',
+      description: `Hi there! I' am Zi Feng. You can call me Feng. Health is the most important thing in part Of our life. Our health is at the center of our life. Every part of our life relies on you having good health. I spend some time for exercise every day. Also, I would spend some time for learning web development because it need a lot of skill and creative thinking. `,
+      links: [
+        { name: 'LinkedIn', link: 'https://www.linkedin.com/' },
+        { name: 'GitHub', link: 'https://github.com/FengLim' },
+      ],
+    },
   ];
 
   constructor() {}
