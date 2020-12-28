@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 // Material Design Components
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,6 +28,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { TechStackComponent } from './about/tech-stack/tech-stack.component';
 import { AboutComponent } from './about/about.component';
+import { CoronatrackerComponent } from './coronatracker/coronatracker.component';
+import { WorldwideHistoryComponent } from './coronatracker/worldwide-history/worldwide-history.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +39,13 @@ import { AboutComponent } from './about/about.component';
     LoginComponent,
     TechStackComponent,
     AboutComponent,
+    CoronatrackerComponent,
+    WorldwideHistoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
@@ -51,6 +59,7 @@ import { AboutComponent } from './about/about.component';
     MatRadioModule,
     MatTabsModule,
     ReactiveFormsModule,
+    NgxChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
