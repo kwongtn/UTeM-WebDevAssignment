@@ -20,7 +20,7 @@ export class WorldwideHistoryComponent implements OnInit {
   screenWidth: number = 1920;
   multi: BarChartData = [];
 
-  view: [number, number] = [this.screenWidth * 0.8, this.screenHeight * 0.2];
+  view: [number, number] = [this.screenWidth * 0.8, this.screenHeight * 0.5];
 
   // options
   legend: boolean = true;
@@ -47,7 +47,7 @@ export class WorldwideHistoryComponent implements OnInit {
   getScreenSize(event?: any) {
     this.screenHeight = window.innerHeight;
     this.screenWidth = window.innerWidth;
-    this.view = [this.screenWidth * 0.9, this.screenHeight * 0.55];
+    this.view = [this.screenWidth * 0.9, this.screenHeight * 0.65];
   }
 
   onSelect(data: any): void {

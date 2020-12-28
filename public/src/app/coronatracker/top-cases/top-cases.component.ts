@@ -13,7 +13,7 @@ export class TopCasesComponent implements OnInit {
   screenWidth: number = 1920;
   multi: BarChartData = [];
 
-  view: [number, number] = [this.screenWidth * 0.8, this.screenHeight * 0.2];
+  view: [number, number] = [this.screenWidth * 0.8, this.screenHeight * 0.5];
 
   // options
   legend: boolean = true;
