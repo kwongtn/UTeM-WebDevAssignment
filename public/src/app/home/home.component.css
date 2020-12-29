@@ -23,3 +23,7 @@ p {
     text-align: justify;
     text-justify: inter-word;
   }
+
+b{
+    font-size:4vw;
+}
