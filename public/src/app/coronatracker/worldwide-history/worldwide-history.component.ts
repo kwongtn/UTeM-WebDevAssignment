@@ -72,36 +72,38 @@ export class WorldwideHistoryComponent implements OnInit {
 
         var dataProcess: Promise<BarChartData> = new Promise(
           (resolve, reject) => {
-            res.forEach(
-              (
-                value: TotalTrending,
-                index: number,
-                array: Array<TotalTrending>
-              ) => {
-                var myDate = new Date(value.lastUpdated)
-                  .toDateString()
-                  .slice(4);
+            res
+              .reverse()
+              .forEach(
+                (
+                  value: TotalTrending,
+                  index: number,
+                  array: Array<TotalTrending>
+                ) => {
+                  var myDate = new Date(value.lastUpdated)
+                    .toDateString()
+                    .slice(4);
 
-                totalConfirmed.series.push({
-                  name: myDate,
-                  value: value.totalConfirmed,
-                });
+                  totalConfirmed.series.push({
+                    name: myDate,
+                    value: value.totalConfirmed,
+                  });
 
-                totalDeaths.series.push({
-                  name: myDate,
-                  value: value.totalDeaths,
-                });
+                  totalDeaths.series.push({
+                    name: myDate,
+                    value: value.totalDeaths,
+                  });
 
-                totalRecovered.series.push({
-                  name: myDate,
-                  value: value.totalRecovered,
-                });
+                  totalRecovered.series.push({
+                    name: myDate,
+                    value: value.totalRecovered,
+                  });
 
-                if (index === array.length - 1) {
-                  resolve([totalConfirmed, totalDeaths, totalRecovered]);
+                  if (index === array.length - 1) {
+                    resolve([totalConfirmed, totalDeaths, totalRecovered]);
+                  }
                 }
-              }
-            );
+              );
           }
         );
 
