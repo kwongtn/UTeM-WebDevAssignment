@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS `ROLE`;
 SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE `USER` (
-    `userID` int NOT NULL,
+    `userID` int NOT NULL AUTO_INCREMENT,
     `name` text NOT NULL,
     `email` text NOT NULL,
     `city` text NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE `USER` (
 );
 
 CREATE TABLE `HISTORY` (
-    `historyID` int NOT NULL,
+    `historyID` int NOT NULL AUTO_INCREMENT,
     `dateTime` dateTime NOT NULL,
     `destCountryID` VARCHAR(2) NOT NULL,
     `userID` int NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `COUNTRY` (
 );
 
 CREATE TABLE `ROLE` (
-    `roleID` int NOT NULL,
+    `roleID` int NOT NULL AUTO_INCREMENT,
     `roleName` TINYTEXT NOT NULL,
     PRIMARY KEY (`roleID`)
 );
