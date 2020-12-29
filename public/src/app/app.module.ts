@@ -11,6 +11,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 // Angular CDK Components
 import { LayoutModule } from '@angular/cdk/layout';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 // Material Design Components
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
 
 // Defined Components
 import { AboutTeamComponent } from './about/team/about-team.component';
@@ -40,6 +42,7 @@ import { DailyCasesComponent } from './coronatracker/daily-cases/daily-cases.com
 import { TopCasesComponent } from './coronatracker/top-cases/top-cases.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ChatboxComponent } from './home/chatbox/chatbox.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TopCasesComponent,
     HomeComponent,
     PageNotFoundComponent,
+    ChatboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,11 +77,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatSelectModule,
     MatRadioModule,
     MatTabsModule,
+    MatListModule,
     ReactiveFormsModule,
     NgxChartsModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
