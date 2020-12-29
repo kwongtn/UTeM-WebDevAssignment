@@ -1,6 +1,13 @@
 section {
   display: table;
 }
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    height: 10%;
+}
 
 .fab-button-container {
   display: flex;
@@ -46,3 +53,21 @@ section {
   height: 100%;
   max-width: 100%;
 }
+
+.imagebackground {
+    background-color: rgb(6, 33, 121);
+}
+
+.w3-tag{
+    background-color: rgb(6, 33, 121);
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
