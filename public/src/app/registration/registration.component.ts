@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { RxwebValidators } from '@rxweb/reactive-form-validators';
 
 @Component({
   selector: 'app-registration',
@@ -7,6 +8,10 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent {
+  password1Dirty: boolean = false;
+  password1Touched: boolean = false;
+  password2Touched: boolean = false;
+  password2Dirty: boolean = false;
   formError: boolean = false;
   form = this.fb.group({
     name: [null, Validators.required],
@@ -22,6 +27,8 @@ export class RegistrationComponent {
         Validators.maxLength(5),
       ]),
     ],
+    password1: [null, Validators.required],
+    password2: [null, Validators.compose([Validators.required])],
     shipping: ['free', Validators.required],
   });
 
@@ -273,6 +280,11 @@ export class RegistrationComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit() {
+    if (
+      this.form.get('password1')?.value != this.form.get('password2')?.value
+    ) {
+      alert('');
+    }
     if (this.form.valid) {
       alert(
         'Thank you for registering, an admin will review your application & send you an email if succesful.'
