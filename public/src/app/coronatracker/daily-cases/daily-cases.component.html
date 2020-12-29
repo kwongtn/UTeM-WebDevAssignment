@@ -1,4 +1,4 @@
-<div class="mat-elevation-z8">
+<div>
   <table mat-table class="full-width-table" matSort aria-label="Elements">
 
     <!-- countryName Column -->
@@ -50,7 +50,7 @@
   </table>
 
   <span *ngIf="dataSource">
-    <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="7">
+    <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="6">
     </mat-paginator>
   </span>
 </div>

@@ -56,7 +56,7 @@ export class AboutTeamComponent implements OnInit {
     },
     {
       name: 'Lim Zi Feng',
-      role: ' ',
+      role: '',
       profilePict: 'assets/Picture.jpg',
       description: `Hi there! I' am Zi Feng. You can call me Feng. Health is the most important thing in part Of our life. Our health is at the center of our life. Every part of our life relies on you having good health. I spend some time for exercise every day. Also, I would spend some time for learning web development because it need a lot of skill and creative thinking. `,
       links: [
