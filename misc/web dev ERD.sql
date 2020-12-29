@@ -1,0 +1,43 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `USER`;
+DROP TABLE IF EXISTS `HISTORY`;
+DROP TABLE IF EXISTS `COUNTRY`;
+DROP TABLE IF EXISTS `ROLE`;
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE `USER` (
+    `userID` int NOT NULL,
+    `name` text NOT NULL,
+    `email` text NOT NULL,
+    `city` text NOT NULL,
+    `postalCode` VARCHAR(5) NOT NULL,
+    `notes` text NOT NULL,
+    `countryID` VARCHAR(2) NOT NULL,
+    `roleID` int NOT NULL,
+    PRIMARY KEY (`userID`)
+);
+
+CREATE TABLE `HISTORY` (
+    `historyID` int NOT NULL,
+    `dateTime` dateTime NOT NULL,
+    `destCountryID` VARCHAR(2) NOT NULL,
+    `userID` int NOT NULL,
+    PRIMARY KEY (`historyID`)
+);
+
+CREATE TABLE `COUNTRY` (
+    `countryID` VARCHAR(2) NOT NULL,
+    `countryName` TINYTEXT NOT NULL,
+    PRIMARY KEY (`countryID`)
+);
+
+CREATE TABLE `ROLE` (
+    `roleID` int NOT NULL,
+    `roleName` TINYTEXT NOT NULL,
+    PRIMARY KEY (`roleID`)
+);
+
+ALTER TABLE `USER` ADD FOREIGN KEY (`countryID`) REFERENCES `COUNTRY`(`countryID`);
+ALTER TABLE `USER` ADD FOREIGN KEY (`roleID`) REFERENCES `ROLE`(`roleID`);
+ALTER TABLE `HISTORY` ADD FOREIGN KEY (`userID`) REFERENCES `USER`(`userID`);
+ALTER TABLE `HISTORY` ADD FOREIGN KEY (`destCountryID`) REFERENCES `COUNTRY`(`countryID`);
