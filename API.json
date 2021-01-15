@@ -66,19 +66,14 @@
                 "description": "Email of the user, that will be used as login ID."
             },
             {
-                "fieldName": "city",
+                "fieldName": "address",
                 "type": "string",
-                "description": "City of the user"
+                "description": "Address of the user"
             },
             {
-                "fieldName": "postalCode",
-                "type": "number",
-                "description": "Postal code of the user."
-            },
-            {
-                "fieldName": "country",
+                "fieldName": "area",
                 "type": "string",
-                "description": "Country code of the country of the user."
+                "description": "Area ID of the user. Should match database."
             },
             {
                 "fieldName": "additionalNotes",
@@ -109,6 +104,105 @@
                 "fieldName": "details",
                 "type": "JSON",
                 "description": "JSON response containing the name, email, city, postalCode, country & additional notes of the user."
+            }
+        ]
+    },
+    {
+        "description": "Submits chat text and gets a response",
+        "type": "POST",
+        "preferredURL": "/chat",
+        "requestFormat": "JSON",
+        "format": [
+            {
+                "fieldName": "sessionID",
+                "type": "string | null",
+                "description": "Session ID if there is a user."
+            },
+            {
+                "fieldName": "message",
+                "type": "string",
+                "description": "Message sent by the user."
+            }
+        ],
+        "responseFormat": [
+            {
+                "fieldName": "message",
+                "type": "string",
+                "description": "Response message. Response method may change later on, but do it like this first."
+            }
+        ]
+    },
+    {
+        "description": "Gets a list of areas",
+        "type": "GET",
+        "preferredURL": "/area-list",
+        "requestFormat": "null",
+        "format": [],
+        "responseFormat": [
+            {
+                "fieldName": "",
+                "type": "array of string",
+                "description": "Array of area as defined in the area table."
+            }
+        ]
+    },
+    {
+        "description": "Gets list of area cases, together with intent count.",
+        "type": "GET",
+        "preferredURL": "/area-details",
+        "requestFormat": "null",
+        "format": [],
+        "responseFormat": [
+            {
+                "fieldName": "areaStats",
+                "type": "array of json",
+                "description": "Array of area as defined in the area table.",
+                "json_details": [
+                    {
+                        "fieldName": "area",
+                        "type": "string",
+                        "description": "Target area."
+                    },
+                    {
+                        "fieldName": "cases",
+                        "type": "number",
+                        "description": "Cases in that particular area"
+                    }
+                ]
+            },
+            {
+                "fieldName": "toAreaIntent",
+                "type": "array of json",
+                "description": "Array of intents to a particular area",
+                "json_details": [
+                    {
+                        "fieldName": "area",
+                        "type": "string",
+                        "description": "Target area."
+                    },
+                    {
+                        "fieldName": "intent",
+                        "type": "number",
+                        "description": "Intents to a particular area"
+                    }
+                ]
+            },
+            {
+                "fieldName": "fromAreaIntent",
+                "type": "array of json",
+                "description": "Array of intents from a particular area",
+                "json_details": [
+                    {
+                        "fieldName": "area",
+                        "type": "string",
+                        "description": "Target area."
+                    },
+                    {
+                        "fieldName": "intent",
+                        "type": "number",
+                        "description": "Intents from a particular area"
+                    }
+                ]
             }
         ]
     }
