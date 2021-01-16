@@ -59,20 +59,19 @@ export class SessionService {
     );
   }
 
-  logout(): Observable<LogoutResponse> | void {
+  logout(): Observable<LogoutResponse> {
     const mySessionID = localStorage.getItem('sessionID');
 
-    var body: any;
+    var body: any = {};
     if (mySessionID) {
       body.sessionID = mySessionID;
-
-      return this.http.post<LogoutResponse>(
-        environment.backendURL + '/logout',
-        body
-      );
     } else {
       console.log('No sessionID found from browser storage.');
     }
+    return this.http.post<LogoutResponse>(
+      environment.backendURL + '/logout',
+      body
+    );
   }
 
   verify(): Observable<VerificationResponse> | void {

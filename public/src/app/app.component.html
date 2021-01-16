@@ -40,7 +40,8 @@
       404
     </button>
   </a>
-  <button mat-flat-button color="primary" class='github-link' style="margin-right:150px;" *ngIf="loginStatus">
+  <button mat-flat-button color="primary" class='github-link' style="margin-right:150px;" *ngIf="loginStatus"
+    (click)="logout()">
     <span style="margin-left: 10px;">
       Logout
     </span>
