@@ -25,12 +25,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // Defined Components
 import { AboutTeamComponent } from './about/team/about-team.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent, LoginStatusDialog } from './login/login.component';
 import { TechStackComponent } from './about/tech-stack/tech-stack.component';
 import { AboutComponent } from './about/about.component';
 import { CoronatrackerComponent } from './coronatracker/coronatracker.component';
@@ -60,6 +61,7 @@ import { ChatboxComponent } from './home/chatbox/chatbox.component';
     HomeComponent,
     PageNotFoundComponent,
     ChatboxComponent,
+    LoginStatusDialog,
   ],
   imports: [
     BrowserModule,
@@ -84,6 +86,7 @@ import { ChatboxComponent } from './home/chatbox/chatbox.component';
     MatPaginatorModule,
     MatSortModule,
     DragDropModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

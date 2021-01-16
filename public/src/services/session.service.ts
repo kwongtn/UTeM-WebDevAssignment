@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { SHA256 } from 'crypto-ts';
+import * as sha256 from 'sha256';
 
 import {
   AreaDetailsResponse,
@@ -16,22 +16,29 @@ import {
   VerificationResponse,
 } from 'models/apiTypes';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SessionService {
+  loginStatus: Subject<boolean> = new Subject<boolean>();
+
+  // Login function
   login(loginForm: LoginForm): Observable<LoginResponse> {
     const body: LoginForm = {
       email: loginForm.email,
-      password: SHA256(loginForm.password) as string,
+      password: sha256(loginForm.password),
     };
-
+    console.log(body);
     return this.http.post<LoginResponse>(
       environment.backendURL + '/login',
       body
     );
+  }
+
+  setLoginStatus(loginStatus: boolean) {
+    this.loginStatus.next(loginStatus);
   }
 
   register(
@@ -42,7 +49,7 @@ export class SessionService {
       email: registrationForm.email,
       address: registrationForm.address,
       area: registrationForm.area,
-      password: SHA256(registrationForm.password) as string,
+      password: sha256(registrationForm.password),
       additionalNotes: registrationForm.additionalNotes,
     };
 
