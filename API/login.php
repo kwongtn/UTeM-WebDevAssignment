@@ -6,19 +6,21 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+$db_connection = new Database();
+$conn = $db_connection->dbConnection();
 
-class User
-{
-    public $conn;
-    private $db;
+//class User
+//{
+//    public $conn;
+//    private $db;
 
-    function __construct()
-    {
+//    function __construct()
+//    {
         //$this->conn = $db;
-        $database = new Database();
-        $db = $database->getConnection();
+//        $database = new Database();
+//        $db = $database->getConnection();
         //$this->conn=$this->db->get_Connection();
-    }
+//    }
     
     public function does_user_exist($email,$password){
         $query = "SELECT * FROM USER WHERE email='$email' && password='$password'";
