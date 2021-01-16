@@ -10,15 +10,15 @@ include_once("database.php");
 //include_once './areaClass.php';
 include_once("areaClass.php");
   
-// instantiate database and product object
+// instantiate database and area object
 $database = new Database();
 $db = $database->getConnection();
   
 // initialize object
 $areaClass = new ($db);
   
-// read products will be here
-// query products
+// read area will be here
+// query area
 $stmt = $areaClass->read();
 $num = $stmt->rowCount();
   
@@ -40,8 +40,7 @@ if($num>0){
   
         $AREA_details=array(
             "areaID" => $areaID,
-            "areaName" => $areaName,
-            
+            "areaName" => $areaName  
         );
   
         array_push($AREA_arr["records"], $AREA_details);
@@ -60,7 +59,7 @@ else{
     // set response code - 404 Not found
     http_response_code(404);
   
-    // tell the user no products found
+    // tell the user no area found
     echo json_encode(
         array("message" => "No products found.")
     );
