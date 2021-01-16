@@ -4,7 +4,8 @@ class Area{
     // database connection and table name
     private $conn;
     private $table_name = "AREA";
-  
+    
+    
     // object properties
     public $areaID;
     public $areaName;
@@ -15,14 +16,11 @@ class Area{
         $this->conn = $db;
     }
 
-    // read products
+    // read are
     function read(){
     
         // select all query
-        $query = "SELECT
-                    a.name as areaName
-                FROM
-                    " . $this->table_name . " ";
+        $query = "SELECT * FROM " . $this->table_name . " ";
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);
@@ -33,4 +31,3 @@ class Area{
         return $stmt;
     }
 }
-?>
