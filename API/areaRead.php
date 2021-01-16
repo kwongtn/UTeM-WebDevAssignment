@@ -54,7 +54,7 @@ if($num>0){
     echo json_encode($AREA_arr);
 }
   
-// no products found will be here
+// no area found will be here
 else{
   
     // set response code - 404 Not found
