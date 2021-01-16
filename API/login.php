@@ -5,11 +5,15 @@ header("Content-Type: application/json; charset=UTF-8");
 
 class User
 {
-    private $conn;
+    public $conn;
+    private $db;
+
     function __construct()
     {
-        $this->db = new DB_Connection();
-        $this->connection=$this->db->get_connection();
+        //$this->conn = $db;
+        $database = new Database();
+        $db = $database->getConnection();
+        //$this->conn=$this->db->get_Connection();
     }
     
     public function does_user_exist($email,$password){
