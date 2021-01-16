@@ -10,8 +10,8 @@
       About
     </button>
   </a>
-  <span class="button-separator"></span>
-  <a routerLink="/dashboard">
+  <span class="button-separator" *ngIf="loginStatus"></span>
+  <a routerLink="/dashboard" *ngIf="loginStatus">
     <button mat-flat-button color="primary">
       Dashboard
     </button>
@@ -22,24 +22,30 @@
       CoronaTracker
     </button>
   </a>
-  <span class="button-separator"></span>
-  <a routerLink="/registration">
+  <span class="button-separator" *ngIf="!loginStatus"></span>
+  <a routerLink="/registration" *ngIf="!loginStatus">
     <button mat-flat-button color="primary">
       Registration
     </button>
   </a>
-  <span class="button-separator"></span>
-  <a routerLink="/login">
+  <span class="button-separator" *ngIf="!loginStatus"></span>
+  <a routerLink="/login" *ngIf="!loginStatus">
     <button mat-flat-button color="primary">
       Login
     </button>
   </a>
-  <span class="button-separator"></span>
-  <a routerLink="/any-page">
+  <span class="button-separator" *ngIf="loginStatus"></span>
+  <a routerLink="/any-page" *ngIf="!loginStatus">
     <button mat-flat-button color="primary">
       404
     </button>
   </a>
+  <button mat-flat-button color="primary" class='github-link' style="margin-right:150px;" *ngIf="loginStatus">
+    <span style="margin-left: 10px;">
+      Logout
+    </span>
+  </button>
+
   <a href="https://github.com/kwongtn/UTeM-WebDevAssignment" class='github-link' target="_blank">
     <button mat-flat-button color="primary" style="margin-right:20px;">
       <img src="https://material.angular.io/assets/img/homepage/github-circle-white-transparent.svg" />
