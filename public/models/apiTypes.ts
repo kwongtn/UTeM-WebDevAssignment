@@ -36,7 +36,13 @@ export interface VerificationForm {
 
 export interface VerificationResponse {
   loginStatus: boolean;
-  details: RegistrationForm; // It will response the same datatype as the registration form.
+  details: {
+    name: string;
+    email: string;
+    address: string;
+    area: string;
+    additionalNotes: string;
+  };
 }
 
 export interface ChatForm {
