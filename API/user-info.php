@@ -5,12 +5,12 @@ header("Access-Control-Allow-Methods: POST");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-require __DIR__.'/Database.php';
+require __DIR__.'/database.php';
 require __DIR__.'/Auth.php';
 
 $allHeaders = getallheaders();
 $db_connection = new Database();
-$conn = $db_connection->dbConnection();
+$conn = $db_connection->getConnection();
 $auth = new Auth($conn,$allHeaders);
 
 $returnData = [

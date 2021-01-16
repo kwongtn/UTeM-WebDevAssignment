@@ -17,7 +17,7 @@ require __DIR__.'/database.php';
 require __DIR__.'/JwtHandler.php';
 
 $db_connection = new Database();
-$conn = $db_connection->dbConnection();
+$conn = $db_connection->getConnection();
 
 $data = json_decode(file_get_contents("php://input"));
 $returnData = [];
