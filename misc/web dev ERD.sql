@@ -9,7 +9,7 @@ CREATE TABLE `USER` (
     `userID` int NOT NULL AUTO_INCREMENT,
     `name` text NOT NULL,
     `email` text NOT NULL,
-    `notes` text NOT NULL,
+    `notes` text,
     `areaID` int,
     `password` text NOT NULL,
     PRIMARY KEY (`userID`)
@@ -31,9 +31,10 @@ CREATE TABLE `AREA` (
 );
 
 CREATE TABLE `SESSION` (
-    `sessionID` int NOT NULL AUTO_INCREMENT,
+    `sessionTracker` int NOT NULL AUTO_INCREMENT,
+    `sessionID` text NOT NULL,
     `userID` int NOT NULL,
-    PRIMARY KEY (`sessionID`)
+    PRIMARY KEY (`sessionTracker`)
 );
 
 ALTER TABLE `USER` ADD FOREIGN KEY (`areaID`) REFERENCES `AREA`(`areaID`);
