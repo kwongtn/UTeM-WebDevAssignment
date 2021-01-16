@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { DailyNewStats, TotalTrending } from 'models/coronatracker';
 import { BarChartData, ChartData } from 'models/ngx-charts';
-import { CoronatrackerService } from 'services/coronatracker.service';
+import { CoronatrackerService } from 'src/services/coronatracker.service';
 
 @Component({
   selector: 'app-top-cases',

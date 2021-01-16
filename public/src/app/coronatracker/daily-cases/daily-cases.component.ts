@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { WorldOMeter } from 'models/coronatracker';
-import { CoronatrackerService } from 'services/coronatracker.service';
+import { CoronatrackerService } from 'src/services/coronatracker.service';
 import { DailyCasesDataSource } from './daily-cases-datasource';
 
 @Component({

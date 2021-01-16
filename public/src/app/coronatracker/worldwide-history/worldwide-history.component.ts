@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-import { CoronatrackerService } from 'services/coronatracker.service';
+import { CoronatrackerService } from 'src/services/coronatracker.service';
 import {
   WorldOMeter,
   DailyNewStats,
