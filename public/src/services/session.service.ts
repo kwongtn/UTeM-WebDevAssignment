@@ -92,10 +92,10 @@ export class SessionService {
     }
   }
 
-  chat(chat: ChatForm): Observable<ChatResponse> | void {
+  chat(chat: ChatForm): Observable<ChatResponse> {
     const mySessionID = localStorage.getItem('sessionID');
 
-    var body: any;
+    var body: any = {};
     if (mySessionID) {
       body.sessionID = mySessionID;
     } else {
