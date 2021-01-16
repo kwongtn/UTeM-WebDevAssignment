@@ -21,6 +21,7 @@ export interface RegistrationForm {
   email: string;
   address: string;
   area: string;
+  password: string;
   additionalNotes: string;
 }
 

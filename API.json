@@ -79,6 +79,11 @@
                 "fieldName": "additionalNotes",
                 "type": "string",
                 "description": "Any additional notes the user wants to add."
+            },
+            {
+                "fieldName": "password",
+                "type": "string",
+                "description": "Hashed user password."
             }
         ]
     },
