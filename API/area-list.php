@@ -15,7 +15,7 @@ $database = new Database();
 $db = $database->getConnection();
   
 // initialize object
-$areaClass = new ($db);
+$areaClass = new Area($db);
   
 // read area will be here
 // query area
