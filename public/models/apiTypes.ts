@@ -5,7 +5,7 @@ export interface LoginForm {
 
 export interface LoginResponse {
   loginStatus: boolean;
-  sessionID: string;
+  sessionID: string | null;
 }
 
 export interface LogoutForm {

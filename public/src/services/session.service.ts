@@ -4,28 +4,39 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { SHA256 } from 'crypto-ts';
 
 import {
+  AreaDetailsResponse,
+  AreaResponse,
   ChatForm,
+  ChatResponse,
   LoginForm,
-  LogoutForm,
+  LoginResponse,
+  LogoutResponse,
   RegistrationForm,
+  RegistrationResponse,
+  VerificationResponse,
 } from 'models/apiTypes';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SessionService {
-  login(loginForm: LoginForm) {
+  login(loginForm: LoginForm): Observable<LoginResponse> {
     const body: LoginForm = {
       email: loginForm.email,
       password: SHA256(loginForm.password) as string,
     };
 
-    // TODO: Action after response
-    this.http.post(environment.backendURL + '/login', body);
+    return this.http.post<LoginResponse>(
+      environment.backendURL + '/login',
+      body
+    );
   }
 
-  register(registrationForm: RegistrationForm) {
+  register(
+    registrationForm: RegistrationForm
+  ): Observable<RegistrationResponse> {
     const body: RegistrationForm = {
       name: registrationForm.name,
       email: registrationForm.email,
@@ -35,41 +46,47 @@ export class SessionService {
       additionalNotes: registrationForm.additionalNotes,
     };
 
-    // TODO: Action after response
-    this.http.post(environment.backendURL + '/registration', body);
+    return this.http.post<RegistrationResponse>(
+      environment.backendURL + '/registration',
+      body
+    );
   }
 
-  logout() {
+  logout(): Observable<LogoutResponse> | void {
     const mySessionID = localStorage.getItem('sessionID');
 
     var body: any;
     if (mySessionID) {
       body.sessionID = mySessionID;
 
-      // TODO: Action after response
-      this.http.post(environment.backendURL + '/logout', body);
+      return this.http.post<LogoutResponse>(
+        environment.backendURL + '/logout',
+        body
+      );
     } else {
       console.log('No sessionID found from browser storage.');
     }
   }
 
-  verify() {
+  verify(): Observable<VerificationResponse> | void {
     const mySessionID = localStorage.getItem('sessionID');
 
     var body: any;
     if (mySessionID) {
       body.sessionID = mySessionID;
 
-      // TODO: Action after response
-      this.http.get(environment.backendURL + '/verify', {
-        params: new HttpParams().set('sessionID', mySessionID),
-      });
+      return this.http.get<VerificationResponse>(
+        environment.backendURL + '/verify',
+        {
+          params: new HttpParams().set('sessionID', mySessionID),
+        }
+      );
     } else {
       console.log('No sessionID found from browser storage.');
     }
   }
 
-  chat(chat: ChatForm) {
+  chat(chat: ChatForm): Observable<ChatResponse> | void {
     const mySessionID = localStorage.getItem('sessionID');
 
     var body: any;
@@ -82,18 +99,17 @@ export class SessionService {
 
     body.message = chat.message;
 
-    // TODO: Action after response
-    this.http.post(environment.backendURL + '/chat', body);
+    return this.http.post<ChatResponse>(environment.backendURL + '/chat', body);
   }
 
-  getAreaList() {
-    // TODO: Action after response
-    this.http.get(environment.backendURL + '/area-list');
+  getAreaList(): Observable<AreaResponse> {
+    return this.http.get<AreaResponse>(environment.backendURL + '/area-list');
   }
 
-  getAreaDetails(){
-    // TODO: Action after response
-    this.http.get(environment.backendURL + '/area-details');
+  getAreaDetails(): Observable<AreaDetailsResponse> {
+    return this.http.get<AreaDetailsResponse>(
+      environment.backendURL + '/area-details'
+    );
   }
 
   constructor(private http: HttpClient) {}
