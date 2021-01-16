@@ -10,10 +10,12 @@ import {
   VerificationForm,
 } from "models/types";
 const axios = require("axios");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(cors());
 
 //initialize a simple http server
 const server = http.createServer(app);
