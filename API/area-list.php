@@ -6,9 +6,9 @@ header("Content-Type: application/json; charset=UTF-8");
 // database connection will be here
 // include database and object files
 //include_once './database.php';
-include_once("database.php");
+include_once('database.php');
 //include_once './areaClass.php';
-include_once("areaClass.php");
+include_once('areaClass.php');
   
 // instantiate database and area object
 $database = new Database();
@@ -27,7 +27,7 @@ if($num>0){
   
     // area array
     $AREA_arr = array();
-    $AREA_arr["records"]=array();
+    $AREA_arr["AREA"]=array();
   
     // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -43,7 +43,7 @@ if($num>0){
             "areaName" => $areaName  
         );
   
-        array_push($AREA_arr["records"], $AREA_details);
+        array_push($AREA_arr["AREA"], $AREA_details);
     }
   
     // set response code - 200 OK
@@ -61,7 +61,6 @@ else{
   
     // tell the user no area found
     echo json_encode(
-        array("message" => "No products found.")
+        array("message" => "No area found.")
     );
 }
-?>
