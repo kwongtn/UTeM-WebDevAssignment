@@ -23,6 +23,7 @@
     "@angular/router": "^11.0.9",
     "@rxweb/reactive-form-validators": "^2.1.2",
     "@swimlane/ngx-charts": "^16.0.0",
+    "crypto-ts": "^1.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "^0.11.3"
