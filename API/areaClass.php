@@ -22,12 +22,7 @@ class Area{
         $query = "SELECT
                     a.name as areaName
                 FROM
-                    " . $this->table_name . " a
-                    LEFT JOIN
-                        AREA al
-                            ON a.areaID = al.id
-                ORDER BY
-                    a.created DESC";
+                    " . $this->table_name . " ";
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);
