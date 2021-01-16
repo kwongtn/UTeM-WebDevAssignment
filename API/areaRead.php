@@ -65,3 +65,4 @@ else{
         array("message" => "No products found.")
     );
 }
+?>
