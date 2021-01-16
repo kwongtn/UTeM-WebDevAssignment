@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginResponse } from 'models/apiTypes';
+import { LoginResponse, VerificationResponse } from 'models/apiTypes';
 import { SessionService } from 'src/services/session.service';
 
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -44,6 +44,13 @@ export class LoginComponent implements OnInit {
           this.sessionService.setLoginStatus(res.loginStatus);
 
           this.openDialog(res.loginStatus);
+
+          // Get user details
+          this.sessionService
+            .verify()
+            .subscribe((res: VerificationResponse) => {
+              localStorage.setItem('userDetails', JSON.stringify(res));
+            });
         });
     } else {
       console.log('Error in login form.');

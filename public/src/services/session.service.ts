@@ -74,10 +74,10 @@ export class SessionService {
     );
   }
 
-  verify(): Observable<VerificationResponse> | void {
+  verify(): Observable<VerificationResponse> | any {
     const mySessionID = localStorage.getItem('sessionID');
 
-    var body: any;
+    var body: any = {};
     if (mySessionID) {
       body.sessionID = mySessionID;
 

@@ -23,6 +23,7 @@ export class AppComponent {
       if (res.logoutStatus) {
         this.sessionService.setLoginStatus(false);
         localStorage.removeItem('sessionID');
+        localStorage.removeItem('userDetails');
         this.router.navigate(['']);
       }
     });
