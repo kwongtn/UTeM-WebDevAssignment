@@ -3,6 +3,7 @@
 // files needed to connect to database
 include_once 'database.php';
 include_once 'user.php';
+//
  
 // get database connection
 $database = new Database();
