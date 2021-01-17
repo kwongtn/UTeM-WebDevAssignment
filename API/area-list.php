@@ -7,10 +7,8 @@ header("Content-Type: application/json; charset=UTF-8");
 // include database and object files
 //include_once './database.php';
 include_once('database.php');
-//include_once './areaClass.php';
-//include_once('areaClass.php');
 
-// instantiate database and area object
+// instantiate database and object
 $database = new Database();
 $db = $database->getConnection();
 $num=array();
