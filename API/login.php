@@ -4,7 +4,6 @@
 include_once 'database.php';
 include_once 'user.php';
 
- 
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
@@ -33,7 +32,6 @@ if($email_exists && password_verify($data->password, $user->password)){
 
     echo json_encode(array("message" => "Login success."));
  
-    
 }
  
 // login failed
