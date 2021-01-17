@@ -12,9 +12,9 @@ class Area{
     
   
     // constructor with $db as database connection
-    public function __construct($db){
-        $this->conn = $db;
-    }
+    //public function __construct($db){
+     //   $this->conn = $db;
+    //}
 
     // read are
     function read(){
@@ -26,8 +26,11 @@ class Area{
         $stmt = $this->conn->prepare($query);
     
         // execute query
-        $stmt->execute();
-    
-        return $stmt;
+        if($stmt->execute()){
+            return true;
+        }
+      
+        return false;
     }
 }
+?>
