@@ -101,4 +101,3 @@ function emailExists(){
     // return false if email does not exist in the database
     return false;
 }
- 
