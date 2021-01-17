@@ -15,8 +15,8 @@ include_once( 'database.php' );
 $database = new Database();
 $db = $database->getConnection();
 
-session_start();
-$errors = array();
+//session_start();
+$result = array();
 
 // Takes raw data from the request
 $json = file_get_contents('php://input');
@@ -27,29 +27,34 @@ $data = json_decode($json);
 $query = "SELECT * FROM webdb.AREA ";  
 $result = $db->query( $query );
 
-$response = ( object )array();
-$response->status = True;
-$response->message = 'success';
+if($result->rowCount()>0)
+{
+    while( $row = $result->fetch( PDO::FETCH_ASSOC ) ) {
 
-echo json_encode($response);
-//if (count($result) > 0) {
-       
-    // set response code - 200 OK
-    //http_response_code(200);
+        $AREA_arr = array(
+            "areaID" =>  $row['areaID'],
+            "areaName" => $row['areaName'] );
+        
+        //array_push($row, $AREA_arr);
+            
+    
+    }
+    //set response code - 200 OK
+    http_response_code(200);
 
-    // show area data in json format
-    //echo json_encode($result);
-//}
+    //show area data in json format
+    echo json_encode($AREA_arr);
+    
+}
+
 
 // no area found will be here
-//else {
+else {
 
     // set response code - 404 Not found
-    //http_response_code(404);
+    http_response_code(404);
 
     // tell the user no area found
-    //echo json_encode(
-        //array("message" => "No area found.")
-    //);
-//}
+    echo json_encode(array("message" => "No area found."));
+}
 ?>
