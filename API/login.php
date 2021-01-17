@@ -49,7 +49,7 @@ if($email_exists && password_verify($data->password, $user->password)){
     // set response code
     http_response_code(200);
  
-    // generate jwt
+    // generate jwt @ sessionID
     $jwt = JWT::encode($token, $key);
     echo json_encode(
             array(
