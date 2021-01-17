@@ -1,72 +1,72 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+// required headers
+header("Access-Control-Allow-Origin: * ");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-include_once( 'database.php' );
+ 
+// files needed to connect to database
+include_once 'database.php';
+include_once 'user.php';
+ 
+// get database connection
 $database = new Database();
 $db = $database->getConnection();
-
-//class User
-//{
-//    public $conn;
-//    private $db;
-
-//    function __construct()
-//    {
-        //$this->conn = $db;
-//        $database = new Database();
-//        $db = $database->getConnection();
-        //$this->conn=$this->db->get_Connection();
-//    }
-    
-    public function does_user_exist($email,$password){
-        $query = "SELECT * FROM USER WHERE email='$email' && password='$password'";
-        $result=mysqli_query($this->connection,$query);
-        if(mysqli_num_rows($result)>0){
-            $row= mysqli_fetch_array($result);
-            $data = array(); 
-            array_push($data,array( "user_id"=>$row['user_id'],
-            "name"=>$row['name'],
-            "email"=>$row['email'],
-            "address"=>$row['address'],
-            "areaID"=>$row['areaID'],
-            "notes"=>$row['notes'],
-            "password"=>$row['password'], ) );
-
-            $json['status']=200;
-            $json['message']='Login Successful';
-            $json['detail']=$data;
-            
-            echo json_encode($json);
-            
-            mysqli_close($this->connection);
-        }
-        
-        else { 
-            $json['status']=400;
-            $json['message']='Wrong email or password';
-            echo json_encode($json);
-            mysqli_close($this->connection);
-        }
-    }
+ 
+// instantiate user object
+$user = new User($db);
+ 
+// get posted data
+$data = json_decode(file_get_contents("php://input"));
+ 
+// set product property values
+$user->email = $data->email;
+$email_exists = $user->emailExists();
+ 
+// generate json web token
+include_once 'config/core.php';
+include_once 'libs/php-jwt-master/src/BeforeValidException.php';
+include_once 'libs/php-jwt-master/src/ExpiredException.php';
+include_once 'libs/php-jwt-master/src/SignatureInvalidException.php';
+include_once 'libs/php-jwt-master/src/JWT.php';
+use \Firebase\JWT\JWT;
+ 
+// check if email exists and if password is correct
+if($email_exists && password_verify($data->password, $user->password)){
+ 
+    $token = array(
+       "iat" => $issued_at,
+       "exp" => $expiration_time,
+       "iss" => $issuer,
+       "data" => array(
+           "userID" => $user->userID,
+           "name" => $user->name,
+           "email" => $user->email
+       )
+    );
+ 
+    // set response code
+    http_response_code(200);
+ 
+    // generate jwt
+    $jwt = JWT::encode($token, $key);
+    echo json_encode(
+            array(
+                "message" => "Successful login.",
+                "jwt" => $jwt
+            )
+        );
+ 
 }
-
-$user = new User();
-if(isset($_POST['email'],$_POST['password']))
-{
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    if (!empty($email) && !empty($password)) {
-        $encrypted_password=md5($password);
-        $user-> does_user_exist($mail,$encrypted_password);
-    }
-    else {
-        $json['status']=100;
-        $json['message']='You must fill both fields';
-        echo json_encode($json);
-    }
+ 
+// login failed
+else{
+ 
+    // set response code
+    http_response_code(401);
+ 
+    // tell the user login failed
+    echo json_encode(array("message" => "Login failed."));
 }
 ?>
