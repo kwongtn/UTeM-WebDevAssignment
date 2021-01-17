@@ -16,7 +16,7 @@ $database = new Database();
 $db = $database->getConnection();
 
 //session_start();
-$result = array();
+
 
 // Takes raw data from the request
 $json = file_get_contents('php://input');
@@ -29,13 +29,15 @@ $result = $db->query( $query );
 
 if($result->rowCount()>0)
 {
+    $results = array();
     while( $row = $result->fetch( PDO::FETCH_ASSOC ) ) {
+        
 
         $AREA_arr = array(
-            "areaID" =>  $row['areaID'],
-            "areaName" => $row['areaName'] );
+            $areaID=  $row['areaID'],
+            $areaName = $row['areaName'] );
         
-        //array_push($row, $AREA_arr);
+        array_push($results, $AREA_arr);
             
     
     }
@@ -43,7 +45,7 @@ if($result->rowCount()>0)
     http_response_code(200);
 
     //show area data in json format
-    echo json_encode($AREA_arr);
+    echo json_encode($results);
     
 }
 
