@@ -2,10 +2,10 @@
 class Database{
   
     
-    private $host = "48mh42.ddns.net:51703";
+    private $db_host = "48mh42.ddns.net:51703";
     private $db_name = "webdb";
-    private $username = "root";
-    private $password = "tnwebdev123";
+    private $db_username = "root";
+    private $db_password = "tnwebdev123";
     public $conn;
   
     // get the database connection
