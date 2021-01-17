@@ -102,4 +102,3 @@ function emailExists(){
     return false;
 }
  
-// update() method will be here
