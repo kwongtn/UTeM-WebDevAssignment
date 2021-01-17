@@ -3,7 +3,7 @@
 // files needed to connect to database
 include_once 'database.php';
 include_once 'user.php';
-//
+
  
 // get database connection
 $database = new Database();
@@ -22,7 +22,7 @@ $email_exists = $user->emailExists();
 // check if email exists and if password is correct
 if($email_exists && password_verify($data->password, $user->password)){
  
-     // generate jwt @ sessionID
+     // generate sessionID
     ini_set('sessionID.hash_function', 'sha256');
 
     $query = "INSERT INTO SESSION WHERE sessionID = '$sessionID'";
