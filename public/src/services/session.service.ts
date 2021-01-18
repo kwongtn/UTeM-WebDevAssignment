@@ -32,7 +32,7 @@ export class SessionService {
     };
     console.log(body);
     return this.http.post<LoginResponse>(
-      environment.backendURL + '/login',
+      environment.backendURL + '/login.php',
       body
     );
   }
@@ -54,7 +54,7 @@ export class SessionService {
     };
 
     return this.http.post<RegistrationResponse>(
-      environment.backendURL + '/registration',
+      environment.backendURL + '/register.php',
       body
     );
   }
@@ -69,7 +69,7 @@ export class SessionService {
       console.log('No sessionID found from browser storage.');
     }
     return this.http.post<LogoutResponse>(
-      environment.backendURL + '/logout',
+      environment.backendURL + '/logout.php',
       body
     );
   }
@@ -82,7 +82,7 @@ export class SessionService {
       body.sessionID = mySessionID;
 
       return this.http.get<VerificationResponse>(
-        environment.backendURL + '/verify',
+        environment.backendURL + '/verify.php',
         {
           params: new HttpParams().set('sessionID', mySessionID),
         }
@@ -105,16 +105,21 @@ export class SessionService {
 
     body.message = chat.message;
 
-    return this.http.post<ChatResponse>(environment.backendURL + '/chat', body);
+    return this.http.post<ChatResponse>(
+      environment.backendURL + '/chat.php',
+      body
+    );
   }
 
   getAreaList(): Observable<AreaResponse> {
-    return this.http.get<AreaResponse>(environment.backendURL + '/area-list');
+    return this.http.get<AreaResponse>(
+      environment.backendURL + '/area-list.php'
+    );
   }
 
   getAreaDetails(): Observable<AreaDetailsResponse> {
     return this.http.get<AreaDetailsResponse>(
-      environment.backendURL + '/area-details'
+      environment.backendURL + '/area-details.php'
     );
   }
 
