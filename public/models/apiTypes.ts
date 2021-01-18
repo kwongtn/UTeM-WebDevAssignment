@@ -35,14 +35,11 @@ export interface VerificationForm {
 }
 
 export interface VerificationResponse {
-  loginStatus: boolean;
-  details: {
-    name: string;
-    email: string;
-    address: string;
-    area: string;
-    additionalNotes: string;
-  };
+  name: string;
+  email: string;
+  address: string;
+  area: string;
+  additionalNotes: string;
 }
 
 export interface ChatForm {
@@ -60,7 +57,7 @@ export interface Area {
   areaID: number;
 }
 
-export interface AreaResponse extends Array<Area> {}
+export interface AreaResponse extends Array<string> {}
 
 export interface AreaStats extends Area {
   cases: number;

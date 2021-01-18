@@ -23,7 +23,7 @@ export class RegistrationComponent {
   formError: boolean = false;
   form = this.fb.group({
     name: [null, Validators.required],
-    notes: null,
+    notes: '',
     address: [null, Validators.required],
     area: [null, Validators.required],
     email: [null, Validators.compose([Validators.required, Validators.email])],
@@ -42,8 +42,9 @@ export class RegistrationComponent {
   ) {
     this.sessionService.getAreaList().subscribe((res: AreaResponse) => {
       console.log(res);
-      this.areas = res.sort((a: Area, b: Area) => {
-        return a.area < b.area ? -1 : 1;
+      // this.areas = res;
+      this.areas = res.sort((a: string, b: string) => {
+        return a < b ? -1 : 1;
       });
       this.formLoading = false;
     });

@@ -20,8 +20,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.sessionService.verify().subscribe((res: VerificationResponse) => {
-      if (res.loginStatus) {
-        this.sessionService.setLoginStatus(res.loginStatus);
+      if (res.email) {
+        this.sessionService.setLoginStatus(true);
       }
     });
   }
