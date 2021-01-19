@@ -46,6 +46,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ChatboxComponent } from './home/chatbox/chatbox.component';
 import { AreaStatsComponent } from './dashboard/area-stats/area-stats.component';
 import { AreaToIntentComponent } from './dashboard/area-to-intent/area-to-intent.component';
+import { AreaFromIntentComponent } from './dashboard/area-from-intent/area-from-intent.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { AreaToIntentComponent } from './dashboard/area-to-intent/area-to-intent
     LoginStatusDialog,
     AreaStatsComponent,
     AreaToIntentComponent,
+    AreaFromIntentComponent,
   ],
   imports: [
     BrowserModule,

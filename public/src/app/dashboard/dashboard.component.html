@@ -2,7 +2,7 @@
   <h1 class="mat-h1">Dashboard</h1>
   <mat-grid-list cols="2" rowHeight="500px">
 
-    <mat-grid-tile [colspan]=1 [rowspan]=1>
+    <mat-grid-tile [colspan]=1 [rowspan]=2>
 
       <mat-card class="dashboard-card">
         <mat-card-header>
@@ -20,6 +20,56 @@
         <mat-card-content class="dashboard-card-content">
           <div>
             <app-area-stats></app-area-stats>
+
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]=1 [rowspan]=1>
+
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Travel Intent to an area historically
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <app-area-to-intent></app-area-to-intent>
+
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]=1 [rowspan]=1>
+
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Travel Intent from an area historically
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <app-area-from-intent></app-area-from-intent>
 
           </div>
         </mat-card-content>
