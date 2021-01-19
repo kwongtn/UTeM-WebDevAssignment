@@ -25,15 +25,19 @@ export class AreaStatsComponent implements AfterViewInit, OnInit {
   ngOnInit() {
     this.dataSource = new AreaStatsDataSource(this.sessionService);
     this.dataSource.connect().subscribe((res: Array<AreaStats>) => {
-      this.dataSource.sort = this.sort;
-      this.dataSource.paginator = this.paginator;
-      this.table.dataSource = this.dataSource;
+      setTimeout(() => {
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        this.table.dataSource = this.dataSource;
+      }, 3000);
     });
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    setTimeout(() => {
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.table.dataSource = this.dataSource;
+    }, 3000);
   }
 }

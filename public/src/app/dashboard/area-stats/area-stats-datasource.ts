@@ -20,7 +20,11 @@ export class AreaStatsDataSource extends DataSource<AreaStats> {
     super();
     this.sessionService.areaStats.subscribe((res: Array<AreaStats>) => {
       this.data = res.filter((value) => {
-        return value.area != 'All' || RegExp(/.*[Ii]mport.*/g).test(value.area);
+        return (
+          value.area != 'All' ||
+          RegExp(/.*[Ii]mport.*/g).test(value.area) ||
+          RegExp(/[Ii]mport/g).test(value.area)
+        );
       });
     });
   }
@@ -67,16 +71,18 @@ export class AreaStatsDataSource extends DataSource<AreaStats> {
    */
   private getSortedData(data: Array<AreaStats>) {
     if (!this.sort.active || this.sort.direction === '') {
-      return data;
+      return data.sort((a, b) => {
+        return compare(+a.cases, +b.cases, false);
+      });
     }
 
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'cases':
-          return compare(a.cases, b.cases, isAsc);
+          return compare(+a.cases, +b.cases, isAsc);
         case 'area':
-          return compare(+a.area, +b.area, isAsc);
+          return compare(a.area, b.area, isAsc);
         default:
           return 0;
       }
