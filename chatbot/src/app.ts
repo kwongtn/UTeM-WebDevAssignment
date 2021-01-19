@@ -138,7 +138,7 @@ app.post("/chat", async (req, res) => {
             result[0].cases +
             " cases in " +
             result[0].district +
-            " from 12 - 16 Jan 2021.",
+            " from 2 - 16 Jan 2021.",
         });
       }
 
