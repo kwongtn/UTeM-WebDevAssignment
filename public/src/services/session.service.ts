@@ -6,6 +6,7 @@ import * as sha256 from 'sha256';
 import {
   AreaDetailsResponse,
   AreaResponse,
+  AreaStats,
   ChatForm,
   ChatResponse,
   LoginForm,
@@ -13,6 +14,7 @@ import {
   LogoutResponse,
   RegistrationForm,
   RegistrationResponse,
+  ToFromAreaIntent,
   VerificationResponse,
 } from 'models/apiTypes';
 import { environment } from 'src/environments/environment';
@@ -23,6 +25,13 @@ import { Observable, Subject } from 'rxjs';
 })
 export class SessionService {
   loginStatus: Subject<boolean> = new Subject<boolean>();
+  areaStats: Subject<Array<AreaStats>> = new Subject<Array<AreaStats>>();
+  toAreaIntent: Subject<Array<ToFromAreaIntent>> = new Subject<
+    Array<ToFromAreaIntent>
+  >();
+  fromAreaIntent: Subject<Array<ToFromAreaIntent>> = new Subject<
+    Array<ToFromAreaIntent>
+  >();
 
   // Login function
   login(loginForm: LoginForm): Observable<LoginResponse> {
@@ -106,7 +115,7 @@ export class SessionService {
     body.message = chat.message;
 
     return this.http.post<ChatResponse>(
-      environment.backendURL + '/chat.php',
+      'http://localhost:3000' + '/chat',
       body
     );
   }
@@ -117,10 +126,14 @@ export class SessionService {
     );
   }
 
-  getAreaDetails(): Observable<AreaDetailsResponse> {
-    return this.http.get<AreaDetailsResponse>(
-      environment.backendURL + '/area-details.php'
-    );
+  getAreaDetails(): void {
+    this.http
+      .get<AreaDetailsResponse>(environment.backendURL + '/area-details.php')
+      .subscribe((res: AreaDetailsResponse) => {
+        this.areaStats.next(res.areaStats);
+        this.toAreaIntent.next(res.toAreaIntent);
+        this.fromAreaIntent.next(res.fromAreaIntent);
+      });
   }
 
   constructor(private http: HttpClient) {}

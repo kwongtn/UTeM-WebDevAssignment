@@ -44,6 +44,7 @@ import { TopCasesComponent } from './coronatracker/top-cases/top-cases.component
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ChatboxComponent } from './home/chatbox/chatbox.component';
+import { AreaStatsComponent } from './dashboard/area-stats/area-stats.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { ChatboxComponent } from './home/chatbox/chatbox.component';
     PageNotFoundComponent,
     ChatboxComponent,
     LoginStatusDialog,
+    AreaStatsComponent,
   ],
   imports: [
     BrowserModule,
