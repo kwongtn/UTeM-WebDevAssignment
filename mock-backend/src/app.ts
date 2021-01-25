@@ -25,7 +25,7 @@ app.post("/login", (req, res) => {
   console.log(myReq);
 
   res.send({
-    loginStatus: false,
+    loginStatus: true,
     sessionID:
       "6b85f4a4c5ec51bc59b67884f0e4c88a1d785cc61b1e0e16e56281c03411a0ae",
   });
@@ -70,8 +70,8 @@ app.get("/verify", (req, res) => {
 
 app.post("/chat", (req, res) => {
   const myReq = req.body as ChatForm;
-
-  res.send(myReq.sessionID + ": " + myReq.message);
+  console.log(req.body);
+  res.send({ message: myReq.sessionID + ": " + myReq.message });
 });
 
 app.get("/area-list", (req, res) => {

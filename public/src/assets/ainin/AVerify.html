@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title> Sign In </title>
+    <link href="averify.css" rel="stylesheet" type="text/css">
+    <script src="Averify.js"></script>
+    
+</head>
+<body>
+    
+        <div class = "container">
+            <h1 class ="label">Sign In </h1>
+            <form class="login_form" action ="AHome.html" method="POST" name="form" onsubmit="return Verify()">
+                <div class = "font">Email or Phone</div>
+                <input type= "text" name="email">
+                <div id = "emailerror">Please fill up your email or phone</div>
+                <div class = "font font2">Password</div>
+                <input type= "password" name="password">
+                <div id = "passworderror">Please fill up your password</div>
+                <div class = "font font3">Confirm Password</div>
+                <input type= "password" name="cpassword">
+                <div id = "cpassworderror">Please make sure both password entered are same</div>
+                <button>Log In</button>
+
+
+            </form>
+                
+        </div>
+    <script src = "Averify.js" ></script>
+        
+        
+    
+     
+
+</body>
+
+</html>

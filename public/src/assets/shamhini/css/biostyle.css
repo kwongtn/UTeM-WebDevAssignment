@@ -1,0 +1,104 @@
+
+#wrapper 
+{ margin: 0 auto; 
+width: 100%; 
+font-family: Comic Sans MS } 
+
+nav {
+  display: inline-block;
+}
+nav ul li a {
+  background:black;
+  padding: 2px 10px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+}
+nav ul li a:hover {
+background: black;
+}
+nav ul li {
+  display: inline-block;
+  margin: 10px;
+}
+nav ul {
+  list-style: none;
+}
+
+#pageContent {
+  max-width: 1000px;
+  margin: auto;
+  border: none;
+}
+
+header h1 { margin: 0; }
+
+#content-container 
+{ float: right; 
+width: 100%; 
+ } 
+main 
+{ font-family: Comic Sans MS;
+  font-size: 14 ;
+  clear:   right; 
+  float: right;  width: 
+  70% ; padding: 20px 
+  0; margin: 10 10 10 10%; 
+  display: inline;} 
+  main p { margin: 0; }
+
+
+article {
+  font-family: Comic Sans MS;
+  font-size: 14 ;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+} 
+#panel, #p, #c {
+  padding: 5px;
+  text-align: center;
+  background-color: #C0C0C0;
+  border: solid 1px #c3c3c3;
+}
+
+#panel, #p, #c{
+  padding: 50px;
+  display: none;
+}
+
+#flip, #f, #h {
+  padding: 5px;
+  text-align: center;
+  background-color: #F5F5F5;
+  border: solid 1px #c3c3c3;
+}
+
+
+aside 
+{   float: left; 
+width:     26%; 
+padding: 10px 0; 
+margin: 0 3% 0 0;
+font-family: Comic Sans MS;
+font-size: 14 ;
+color:#DC143C;
+display: inline; 
+} 
+
+
+aside > div {
+	margin: 10px auto;
+	background: #AEC6CF;
+	min-height: 100px;
+}
+
+
+body > section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 0px;
+  border-bottom: 1px solid #999;
+  color: #333;
+}

@@ -1,0 +1,67 @@
+
+header {
+    background:none;
+    font-family: Script MT;
+    font-size: 24;
+    padding: 20px 30px;
+    max-width: 940px;
+    margin: auto;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #000000;
+    font-family: Comic Sans MS;
+  }
+  
+.navbar a {
+    float: left;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 20px 55px;
+    text-decoration: none;
+  }
+#pageContent {
+    max-width: 1000px;
+    margin: auto;
+    border: none;
+}
+main {
+	float: left;
+    width: 60%;
+    font-family: Comic Sans MS;
+    font-size: 14 ;
+}
+
+aside {
+	float: right;
+	width: 30%;
+}
+article {
+    border-bottom: 2px dotted #999;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+article h2 {
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+aside > div {
+	margin: 10px auto;
+    background: #ddbbdf;
+    text-align: center;
+    font-family: Comic Sans MS;
+    font-size: 14 ;
+	min-height: 100px;
+}
+
+body > section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0px;
+    border-bottom: 1px solid #999;
+    color: #333;
+}
+

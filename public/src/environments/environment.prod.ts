@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: false,
+
+  backendURL: 'http://192.168.1.120:8088',
 };

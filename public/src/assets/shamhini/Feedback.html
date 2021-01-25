@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="css/feed.css"type="text/css"> 
+    <title>Feedback</title>
+    <script type ="text/javascript" >
+    // POP-up message
+      function testbutton (form){
+                  len = document.testform.rad.length;
+                  for (i = 0; i <len; i++) 
+                  { if (document.testform.rad[i].checked) 
+                        { chosen = document.testform.rad[i].value; } 
+                  }
+                       if ((testform.rad[0].checked == false) && 
+                           (testform.rad[1].checked==false))
+                          { alert("Gender not chosen"); }
+                  else { alert("Thank you for your submission."); } 
+      }
+      //Browsing a website using JavaScript
+      function Site(val)
+              {
+                window.location.href = val;
+              }
+      </script>
+
+</head>
+<Body background="img/bg.jpg"> 
+
+
+<body>
+	<header>
+        <center>
+            <svg width="1000" height="180">
+            <rect x="100" y="20" rx="20" ry="20" width="800" height="90"
+            style="fill:rgb(0, 0, 0);stroke:rgb(3, 75, 97);stroke-width:5;opacity:0.5" />
+            Sorry, your browser does not support inline SVG.
+            <text fill="#ffffff" font-size="45" font-family="Script MT"
+            x="320" y="80">Feedback Form</text>
+            </svg>
+        </center>
+
+        <div class="navbar">
+          <a href="Biography.html">Home</a>
+          <a href="Feedback.html">Feedback</a>
+          <a type="button" value="Logout" style="float:right" onClick="myConfirm(); ">Logout</a>
+        
+        </div>
+        <script type="text/javascript"> 
+          function myConfirm(){ 
+          var answer = confirm("You are about to leave our site. Are you sure you want to proceed?"); 
+          if(answer) 
+          { window.location="http://www.google.com"; } 
+          else 
+           { window.location="Biography.html";;
+          } 
+        }
+          </script> 
+
+	</header>
+
+	<section id="pageContent">
+		<main role="main">
+            <article>
+            <form action="/action_page.php" method="POST">
+              Full name : <input type="text" id="fname" name="fname" placeholder="Eg: Shamhinidevi" >
+            <br>
+            </form> 
+            <br>
+            <form action = "/action_page.php" method = "get">
+              Mail ID : <input type = "email" name = "newinput" placeholder="Eg: shamhini@gmail.com"  />
+            </form>
+            <br>
+            <form action = "/action_page.php" method = "get">
+              Time : <input type="time" id="Time" name="Time" placeholder="Entre time">
+            </form>
+            <br>
+            <form action = "/action_page.php" method = "get">
+              Date :  <input type="date" id="Date" name="Date" placeholder="Entre time">
+            </form>
+            <br>
+            <form action = "/action_page.php" method = "get">
+              Ratings : <input type = "range" min = "0" max = "10" step "1" value = "5" name = "newinput" />
+            </form>
+            <br>
+            <form name="testform">
+              Gender: <input type = radio name = "rad" value = "M" > Male
+              <input type = radio name = "rad" value = "UKM" > Female
+             <br> <br>
+            <input type="button" name="button" value="Submit" onclick="testbutton(form);"> 
+            </form>
+            <br>
+ 
+
+            </article>
+
+                <style>
+                    #div1 {
+                      width: 280px;
+                      height: 50px;
+                      padding: 10px;
+                      border: 1px solid #aaaaaa;
+                    }
+                </style>
+                    <script>
+                    function allowDrop(ev) {
+                      ev.preventDefault();
+                    }
+                    
+                    function drag(ev) {
+                      ev.dataTransfer.setData("text", ev.target.id);
+                    }
+                    
+                    function drop(ev) {
+                      ev.preventDefault();
+                      var data = ev.dataTransfer.getData("text");
+                      ev.target.appendChild(document.getElementById(data));
+                    }
+                    </script>
+                    </head>
+                  </body>
+                    
+                    <p>Please leave your feedback here :</p>
+                    
+                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <br>
+                    <img id="drag1" src="img/star.png" draggable="true" ondragstart="drag(event)" width="50" height="50">
+                    <img id="drag2" src="img/star.png" draggable="true" ondragstart="drag(event)" width="50" height="50">
+                    <img id="drag3" src="img/star.png" draggable="true" ondragstart="drag(event)" width="50" height="50">
+                    <img id="drag4" src="img/star.png" draggable="true" ondragstart="drag(event)" width="50" height="50">
+                    <img id="drag5" src="img/star.png" draggable="true" ondragstart="drag(event)" width="50" height="50">
+    </main>
+    
+		<aside>
+      <div>
+        Select any of my site to browse:
+        <br>
+        <form action = "">
+          <select name = " SiteSelector" size = "1" onChange="Site(this.value)">
+            <option value = ""> Choose From Here </option>
+            <option value = "https://github.com/Sham0106"> GitHub </option>
+            <option value = "https://bits1313group5.blogspot.com/"> Data Communication & Networking</option>
+            <option value = "https://expertsystemofcareerfinding.blogspot.com/"> Expert System </option>
+    
+          </select>
+        </form>
+      </div>
+			<div>
+        <video src="img/Thank You.mp4" width="300" height="200" controls>
+                Your browser does not support the <video> element. 
+               </video>
+      </div>
+               
+			<div><canvas id="myCanvas" width="300" height="100" >
+                Your browser does not support the HTML canvas tag.</canvas>
+                
+                <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.font = "40px Arial";
+                ctx.strokeText("Xiè Xiè",90,50);
+                </script></div>
+			<div><svg height="130" width="500">
+                <defs>
+                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"
+                    style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                    <stop offset="100%"
+                    style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="150" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                <text fill="#ffffff" font-size="45" font-family="Verdana"
+                x="90" y="86">நன்றி</text>
+              Sorry, your browser does not support inline SVG.
+              </svg></div>
+   
+        </aside>
+        
+	</section>
+
+
+
+</body>
+
+</html>

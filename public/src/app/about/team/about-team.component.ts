@@ -29,6 +29,7 @@ export class AboutTeamComponent implements OnInit {
       links: [
         { name: 'LinkedIn', link: 'https://www.linkedin.com/in/kwongtn/' },
         { name: 'GitHub', link: 'https://github.com/kwongtn' },
+        { name: 'Biography', link: 'assets/kwongtn/B031810219.html' },
       ],
     },
     {
@@ -42,6 +43,7 @@ export class AboutTeamComponent implements OnInit {
           link: 'https://www.linkedin.com/in/shamhinidevi-jayabalan-ba5a77159',
         },
         { name: 'GitHub', link: 'https://github.com/Sham0106' },
+        { name: 'Biography', link: 'assets/shamhini/Biography.html' },
       ],
     },
     {
@@ -52,6 +54,7 @@ export class AboutTeamComponent implements OnInit {
       links: [
         { name: 'LinkedIn', link: 'https://www.linkedin.com/in/AinSofiya' },
         { name: 'GitHub', link: 'https://github.com/AinSofiya' },
+        { name: 'Biography', link: 'assets/ainin/biograpAHome.html' },
       ],
     },
     {
@@ -62,6 +65,7 @@ export class AboutTeamComponent implements OnInit {
       links: [
         { name: 'LinkedIn', link: 'https://www.linkedin.com/' },
         { name: 'GitHub', link: 'https://github.com/FengLim' },
+        { name: 'Biography', link: 'assets/zifeng/biography.html' },
       ],
     },
   ];

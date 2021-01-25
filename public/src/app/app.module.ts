@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 
 // Angular CDK Components
 import { LayoutModule } from '@angular/cdk/layout';
@@ -92,6 +93,7 @@ import { AreaFromIntentComponent } from './dashboard/area-from-intent/area-from-
     MatPaginatorModule,
     MatSortModule,
     DragDropModule,
+    RxReactiveFormsModule,
     MatDialogModule,
   ],
   providers: [],

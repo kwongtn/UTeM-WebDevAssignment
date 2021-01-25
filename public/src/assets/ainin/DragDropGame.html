@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title> DnDGame </title>
+    <link href="DragDropGame.css" rel="stylesheet" type="text/css">
+    <script src="DragDropGame.js"></script>
+</head>
+<body>
+	<header>
+		<ul class="main-nav">
+			<li class="active"> <a href="AHome.html"> HOME </a> </li>
+			<li> <a href="AGallery.html"> GALLERY </a> </li>
+			<li> <a href="AAbout.html"> ABOUT </a> </li>
+			<li> <a href="AContact.html"> CONTACT </a> </li>
+			<li> <a href="AMore.html"> MORE </a> </li>
+			
+		</ul>
+    </div>
+    <div class = "dd" > 
+      <div id="dropZone">
+        <div
+          id="dropBox1"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p>Ice Cream</p>
+        </div>
+        <div
+          id="dropBox2"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p>Elephant</p>
+        </div>
+        <div
+          id="dropBox3"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p>Cat</p>
+        </div>
+        <div
+          id="dropBox4"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p>Flower</p>
+        </div>
+      </div>
+      <div
+        id="animals"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        <img
+          id="cat"
+          src="pic-cat.jpg"
+          draggable="true"
+          ondragstart="drag(event)"
+          width="300"
+        />
+      <img
+          id="flower"
+          src="pic-flower.jpg"
+          draggable="true"
+          ondragstart="drag(event)"
+          width="300"
+        />
+      <img
+          id="elephant"
+          src="pic-elephant.jpg"
+          draggable="true"
+          ondragstart="drag(event)"
+          width="300"
+        />
+      <img
+          id="icecream"
+          src="pic-icecream.jpg"
+          draggable="true"
+          ondragstart="drag(event)"
+          width="300"
+        />
+      </div>
+    </div>
+    
+
+  </header>
+
+  
+</body>
+
+</html>

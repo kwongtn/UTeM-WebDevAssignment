@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title> GALLERY </title>
+    <link href="agallery.css" rel="stylesheet" type="text/css">
+    <style>
+        #svgelem{
+        position: relative;
+        left: 20%;
+        -webkit-transform: translateX(-40%);
+        -ms-transform: translateX(-40%);
+        transform: translateX(-40%);
+        }
+        </style>
+        <style>
+            #mycanvas{border:1px solid red;}
+        </style>
+</head>
+<body>
+	<header>
+		<ul class="main-nav">
+			<li> <a href="AHome.html"> HOME </a> </li>
+			<li class="active"> <a href="AGallery.html"> GALLERY </a> </li>
+			<li> <a href="AAbout.html"> ABOUT </a> </li>
+			<li> <a href="AContact.html"> CONTACT </a> </li>
+            <li> <a href="AMore.html"> MORE </a> </li>
+            <li> <a href="DragDropGame.html"> DragDrop </a> </li>
+            <li> <a href="trycanvas.html"> Canvas </a> </li>
+		</ul>
+		</div>
+		<div class = "about">
+			<h1> svg </h1>
+			<h2>HTML5 SVG Circle</h2>
+            <svg id="svgelem" height="200" xmlns="http://www.w3.org/2000/svg">
+<circle id="redcircle" cx="50" cy="50" r="50" fill="red" />
+            </svg>
+            <svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <radialGradient id="gradient" cx="50%" cy="50%" r="50%" fx="50%"
+                fy="50%">
+                <stop offset="0%" style="stop-color:rgb(200,200,200); stopopacity:
+                0"/>
+                <stop offset="100%" style="stop-color:rgb(0,0,255); stopopacity:
+                1"/>
+                </radialGradient>
+                </defs>
+                <ellipse cx="100" cy="50" rx="100" ry="50" style="fill:url(#gradient)" />
+            </svg>
+            <h2 align ="left">HTML5 SVG Star</h2>
+            <svg id="svgelem" height="200" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="100,10 40,180 190,60 10,60 160,180" fill="pink"/>
+            </svg>
+            
+
+		</div>
+        <canvas id="mycanvas" width="100" height="100"></canvas>
+        
+        
+    </header>
+    
+    
+</body>
+
+</html>

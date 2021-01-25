@@ -1,0 +1,92 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+header
+{
+	background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(roses.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+
+.main-nav
+{
+	float: right;
+	list-style: none;
+	margin-top: 30px
+
+}
+.main-nav li
+{
+	display: inline-block;
+
+}
+.main-nav li a
+{
+	color: white;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: "Roboto", sans-serif;
+	font-size : 15px;
+
+}
+.main-nav li.active a
+{
+	border: 1px solid white;
+	
+}
+.main-nav li a:hover
+{
+	border: 1px solid white;
+	
+}
+body{
+	font-family: monospace;
+}
+
+.about
+{
+	position: absolute;
+	width: 800px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+#dropZone,
+#animals {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+.dd
+{
+	position: absolute;
+	width: 800px;
+	margin-left: 250px;
+	margin-top: 150px;
+}
+#dropBox1,
+#dropBox2,
+#dropBox3,
+#dropBox4 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  border: 1px solid #aaaaaa;
+  padding: 1rem;
+  color: aliceblue;
+  font-family: "Roboto", sans-serif;
+  font-size : 15px;
+}
+img {
+  height: 150px;
+  object-fit: cover;
+  width: 150px;
+}

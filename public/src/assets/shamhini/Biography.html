@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Biography</title>
+<link rel="stylesheet"href="css/biostyle.css"type="text/css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+  $("#f").click(function(){
+    $("#p").slideToggle("slow");
+  });
+}); 
+
+$(document).ready(function(){
+  $("#h").click(function(){
+    $("#c").slideToggle("slow");
+  });
+});  
+</script>
+  
+</head>
+
+<Body background="img/bg.jpg"> 
+    <style>
+    header 
+    { background: #000000; 
+      padding: 20px; 
+      font-family: Script MT;
+      font-size: 24;
+      color:white
+    } 
+    </style>
+
+<body>
+<div id="wrapper">
+
+<center>
+    <body>
+        <header>
+            <center>
+            <h1>Biography</h1>
+            <h1> of </h1>
+            <h1>Shamhinidevi Jaya Balan</h1>
+            </center>
+        </header>
+        
+        <section>
+            <nav>  
+                <ul>
+                    <li><a href="Biography.html">Home</a>
+                    <li><a href="Feedback.html">Feedback</a>
+                </ul>
+            </nav>
+        </section>
+<div id="content-container">
+
+
+<aside>
+<center>
+<img src="img/sham.jpg" width="150" height="200" alt="Shamhinidevi's pic" />
+
+<h4 >Name:</h4>
+<p> Shamhinidevi D/O Jaya Balan</p>
+<h4 >Birth Date:</h4>
+<p> 1st June 1997</p>
+<h4 >Place of Birth: </h4>
+<p>Teluk Intan, Perak</p>
+<h4 >Education: </h4>
+<p> i. Politeknik Balik Pulau, Penang </p> 
+<p> ii. Universiti Teknikal Melaka Malaysia</p>
+</center>
+
+
+</aside>
+
+
+<main>
+<div id = "flip"><h2>Who am I?</h2></div>
+<div id = "panel"><p>I'm Shamhinidevi (born June 1,1997) an undergraduate student . 
+I am currently pursuing my third year Bachelor of Degree in Computer Science specializes in Artificial Intelligence. In 2018, I graduated from Politeknik Balik Pulau (PBU).</p></div>
+
+<div id = "f"><h2>Experiences in Web Development</h2></div>
+<div id = "p"><p>Previously in Diploma Final Year Project, my teammates and I developed a system to our Politeknik. 
+We named it as, Unit Penyelidikan, Inovasi dan Pengkomersialan (UPIK). The purposes of this project are to identify the problems faced by staffs and students. 
+Commonly, at UPIK they used manual process to edit and update data. Most of the time, admin and students struggle to find their innovations project's data. 
+Sometimes, manual process forms are can be loss or erase in any natural disaster.Thus, we built a website to overcome all those problems.
+In my Workshop 1, I built a simple car rental system. In UTeM campus, there were several difficulties for student who did not have any transport to 
+go outside campus area such as they have difficulties to find rental cars in UTeM.The main purpose of this car rental system is to improve the efficiency of current method, 
+which is advertise and rent car manually. This system is developed to solve the problems that usually happen when student want to rent a car in UTeM.</p></div>
+
+<div id = "h"><h2>My inspritional song,</h2></div>
+<div id = "c"><audio src="img/song.mp3" controls autoplay>Your browser does not support the element.</audio></div>
+
+</main>
+
+
+
+
+
+<br>
+<canvas id="myCanvas" width="500" height="100">
+    Your browser does not support the HTML canvas tag.</canvas>
+    
+    <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    
+    // Create gradient
+    var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+    grd.addColorStop(0,"blue");
+    grd.addColorStop(1,"red");
+    
+    // Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.font = "18px  Comic Sans MS";
+    ctx.fillText("For Further Enquiries Contact: shamhinid@gmail.com", 10, 50);
+    </script>
+</div>
+</div>
+
+</div>
+</body>
+</html>
